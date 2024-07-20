@@ -20,10 +20,14 @@
     @apply max-w-7xl m-auto;
   }
 
+}
 
-  /* Character Cards */
+
+@layer components {
+
+  /* CharacterCard */
   .charList {
-    @apply grid grid-cols-3 gap-8;
+    @apply grid grid-cols-5 gap-8;
   }
 
   .sw-char {
@@ -31,12 +35,10 @@
   }
 
   .sw-char img {
-    @apply aspect-square object-cover min-h-32;
+    @apply aspect-square object-cover min-h-40 w-full;
   }
-}
 
-
-@layer components {
+  /* SearchBar*/
   .search-bar {
     @apply mb-4;
   }
@@ -45,6 +47,32 @@
     @apply w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-800;
   }
 
+  .character-details {
+    @apply max-w-2xl mx-auto p-4;
+  }
+
+  .character-image {
+    @apply w-64 h-64 object-cover mx-auto mb-4 rounded-lg;
+  }
+
+  .character-info {
+    @apply space-y-2 mb-4;
+  }
+
+  .back-button {
+    @apply inline-block px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors;
+  }
+
+  /* SortSelect */
+  .controls {
+    @apply flex justify-between items-center mb-4;
+  }
+
+  .sort-select {
+    @apply px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-black;
+  }
+
+  /* Pagination */
   .pagination {
     @apply flex justify-center mt-4 space-x-2;
   }

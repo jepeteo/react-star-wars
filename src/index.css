@@ -37,6 +37,14 @@
 
 
 @layer components {
+  .search-bar {
+    @apply mb-4;
+  }
+
+  .search-input {
+    @apply w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-800;
+  }
+
   .pagination {
     @apply flex justify-center mt-4 space-x-2;
   }
@@ -48,4 +56,6 @@
   .pagination button.active {
     @apply bg-blue-500 text-white;
   }
+
+
 }

@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: system-ui, ;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark light;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #121516;
+}
+
+@layer base {
+  h1 {
+    @apply text-4xl p-8 text-center;
+  }
+
+  .container {
+    @apply max-w-7xl m-auto;
+  }
+
+
+  /* Character Cards */
+  .charList {
+    @apply grid grid-cols-3 gap-8;
+  }
+
+  .sw-char {
+    @apply p-4 border flex gap-2;
+  }
+
+  .sw-char img {
+    @apply aspect-square object-cover min-h-32;
+  }
+}
+
+
+@layer components {
+  .pagination {
+    @apply flex justify-center mt-4 space-x-2;
+  }
+
+  .pagination button {
+    @apply px-3 py-1 border rounded;
+  }
+
+  .pagination button.active {
+    @apply bg-blue-500 text-white;
+  }
+}

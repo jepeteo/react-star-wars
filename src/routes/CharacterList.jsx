@@ -13,7 +13,7 @@ const CharacterList = () => {
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
   const [sortBy, setSortBy] = useState("name")
-  const charactersPerPage = 12
+  const charactersPerPage = 10
 
   useEffect(() => {
     const fetchCharacters = async () => {
@@ -68,8 +68,10 @@ const CharacterList = () => {
   return (
     <div className="container">
       <h1>Star Wars Characters</h1>
-      <SearchBar onSearch={handleSearch} />
-      <SortSelect onSort={handleSort} />
+      <div className="container-search">
+        <SearchBar onSearch={handleSearch} />
+        <SortSelect onSort={handleSort} />
+      </div>
       <ul className="charList">
         {currentCharacters.map((character) => (
           <CharacterCard key={character.id} character={character} />

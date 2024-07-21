@@ -25,22 +25,36 @@
 
 @layer components {
 
+  /* Navigation */
+  .main-nav {
+    @apply flex justify-between;
+  }
+
+  .main-nav ul {
+    @apply flex gap-4 py-4
+  }
+
   /* CharacterCard */
   .charList {
     @apply grid grid-cols-5 gap-8;
   }
 
   .sw-char {
-    @apply p-4 border flex gap-2;
+    @apply p-4 border border-slate-600 rounded-lg flex gap-2 shadow-md shadow-blue-500 hover:shadow-red-600 hover:scale-[1.02];
+    transition: all .4s ease
   }
 
   .sw-char img {
-    @apply aspect-square object-cover min-h-40 w-full;
+    @apply aspect-square object-cover min-h-40 w-full rounded-xl;
   }
 
   /* SearchBar*/
+  .container-search {
+    @apply w-full flex gap-8 mb-8;
+  }
+
   .search-bar {
-    @apply mb-4;
+    @apply w-full;
   }
 
   .search-input {

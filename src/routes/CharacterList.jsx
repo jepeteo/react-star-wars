@@ -6,6 +6,7 @@ import CharacterCard from "./../components/CharacterCard"
 import Pagination from "./../components/Pagination"
 import SearchBar from "../components/SearchBar"
 import SortSelect from "../components/SortSelect"
+import SkeletonCard from "../components/SkeleteonCard"
 
 const CharacterList = () => {
   const [characters, setCharacters] = useState([])
@@ -62,7 +63,22 @@ const CharacterList = () => {
     paginate(1)
   }
 
-  if (isLoading) return <div>Loading...</div>
+  if (isLoading) {
+    return (
+      <div className="container">
+        <h1>Star Wars Characters</h1>
+        <div className="controls">
+          <div className="w-64 h-8 bg-gray-300 rounded animate-pulse"></div>
+          <div className="w-32 h-8 bg-gray-300 rounded animate-pulse"></div>
+        </div>
+        <ul className="charList">
+          {[...Array(charactersPerPage)].map((_, index) => (
+            <SkeletonCard key={index} />
+          ))}
+        </ul>
+      </div>
+    )
+  }
   if (error) return <div>{error}</div>
 
   return (

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { useParams, Link } from "react-router-dom"
 import axios from "axios"
+import LazyImage from "./LazyImage"
 
 const CharacterDetails = () => {
   const [character, setCharacter] = useState(null)
@@ -43,7 +44,7 @@ const CharacterDetails = () => {
   return (
     <div className="character-details">
       <h1>{character.name}</h1>
-      <img src={character.image} alt={character.name} className="character-image" />
+      <LazyImage src={character.image} alt={character.name} className="character-image w-64 h-64" />
       <div className="character-info">
         <p>
           <span>Height</span>

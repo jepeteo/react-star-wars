@@ -27,7 +27,7 @@
 
   /* Navigation */
   .main-nav {
-    @apply flex justify-between;
+    @apply flex justify-between px-4 md:px-8;
   }
 
   .main-nav ul {
@@ -36,7 +36,7 @@
 
   /* CharacterCard */
   .charList {
-    @apply grid grid-cols-5 gap-8;
+    @apply grid p-4 grid-cols-2 gap-4 xl:grid-cols-5 md:p-8 md:gap-8;
   }
 
   .sw-char {
@@ -50,7 +50,7 @@
 
   /* SearchBar*/
   .container-search {
-    @apply w-full flex gap-8 mb-8;
+    @apply w-full flex gap-8 mb-0 px-4 md:px-8;
   }
 
   .search-bar {
@@ -110,6 +110,19 @@
 
   .error-boundary p {
     @apply mb-4;
+  }
+
+  /* LazyImage */
+  .lazy-image-container {
+    @apply relative overflow-hidden;
+  }
+
+  .lazy-image {
+    @apply w-full h-full object-cover;
+  }
+
+  .lazy-image-placeholder {
+    @apply absolute inset-0;
   }
 }
 

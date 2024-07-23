@@ -1,4 +1,3 @@
-// components/CharacterList.jsx
 import { useState, useEffect, useMemo } from "react"
 import axios from "axios"
 import { usePagination } from "../hooks/usePagination"

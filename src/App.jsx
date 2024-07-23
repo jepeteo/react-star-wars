@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom"
+import { ThemeProvider } from "./contexts/ThemeContext.jsx"
 import { AnimatePresence } from "framer-motion"
 import Navigation from "./components/Navigation.jsx"
 import ErrorBoundary from "./components/ErrorBoundary.jsx"
@@ -27,14 +28,16 @@ const AnimatedRoutes = () => {
 
 const App = () => {
   return (
-    <Router>
-      <ErrorBoundary>
-        <Navigation />
-        <Suspense fallback={<div>Loading...</div>}>
-          <AnimatedRoutes />
-        </Suspense>
-      </ErrorBoundary>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <ErrorBoundary>
+          <Navigation />
+          <Suspense fallback={<div>Loading...</div>}>
+            <AnimatedRoutes />
+          </Suspense>
+        </ErrorBoundary>
+      </Router>
+    </ThemeProvider>
   )
 }
 

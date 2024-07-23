@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from "react"
 import axios from "axios"
+import { motion, AnimatePresence } from "framer-motion"
 import { usePagination } from "../hooks/usePagination"
 import CharacterCard from "./../components/CharacterCard"
 import Pagination from "./../components/Pagination"
@@ -87,11 +88,18 @@ const CharacterList = () => {
         <SearchBar onSearch={handleSearch} />
         <SortSelect onSort={handleSort} />
       </div>
-      <ul className="charList">
-        {currentCharacters.map((character) => (
-          <CharacterCard key={character.id} character={character} />
-        ))}
-      </ul>
+      <AnimatePresence>
+        <motion.ul
+          className="charList"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          {currentCharacters.map((character) => (
+            <CharacterCard key={character.id} character={character} />
+          ))}
+        </motion.ul>
+      </AnimatePresence>
       <Pagination currentPage={currentPage} totalPages={totalPages} paginate={paginate} />
     </div>
   )

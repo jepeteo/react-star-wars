@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { useParams, Link } from "react-router-dom"
 import axios from "axios"
+import { motion } from "framer-motion"
 import LazyImage from "./LazyImage"
 
 const CharacterDetails = () => {
@@ -42,7 +43,13 @@ const CharacterDetails = () => {
   if (!character) return <div>Character not found.</div>
 
   return (
-    <div className="character-details">
+    <motion.div
+      className="character-details"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.3 }}
+    >
       <h1>{character.name}</h1>
       <LazyImage src={character.image} alt={character.name} className="character-image w-64 h-64" />
       <div className="character-info">
@@ -76,7 +83,7 @@ const CharacterDetails = () => {
       <Link to="/characters" className="back-button">
         Back to Characters
       </Link>
-    </div>
+    </motion.div>
   )
 }
 export default CharacterDetails

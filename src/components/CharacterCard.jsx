@@ -1,9 +1,17 @@
-import React from "react"
+import React, { useMemo } from "react"
 import { Link } from "react-router-dom"
+import { motion } from "framer-motion"
 import LazyImage from "./LazyImage"
 
 const CharacterCard = ({ character }) => (
-  <li className="sw-char">
+  <motion.li
+    className="sw-char"
+    layout
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.3 }}
+  >
     <Link to={`/characters/${character.id}`}>
       <LazyImage
         src={character.image}
@@ -15,7 +23,7 @@ const CharacterCard = ({ character }) => (
         <p>Homeworld: {character.homeworld}</p>
       </div>
     </Link>
-  </li>
+  </motion.li>
 )
 
 export default CharacterCard

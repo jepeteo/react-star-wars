@@ -67,9 +67,9 @@ const CharacterList = () => {
     return (
       <div className="container">
         <h1>Star Wars Characters</h1>
-        <div className="controls">
-          <div className="w-64 h-8 bg-gray-300 rounded animate-pulse"></div>
-          <div className="w-32 h-8 bg-gray-300 rounded animate-pulse"></div>
+        <div className="controls container-search">
+          <div className="w-3/4 h-10 bg-gray-300 rounded animate-pulse"></div>
+          <div className="w-1/4 h-10 bg-gray-300 rounded animate-pulse"></div>
         </div>
         <ul className="charList">
           {[...Array(charactersPerPage)].map((_, index) => (

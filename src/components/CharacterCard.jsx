@@ -16,11 +16,17 @@ const CharacterCard = ({ character }) => (
       <LazyImage
         src={character.image}
         alt={character.name}
-        className="w-full rounded-lg aspect-square min-w-24 md:min-w-60"
+        className="w-full rounded-lg aspect-square mb-2 min-w-24 md:min-w-60"
       />
       <div>
-        <h2>{character.name}</h2>
-        <p>Homeworld: {character.homeworld}</p>
+        <p className="character-card-info">{character.name}</p>
+        <p className="character-card-info">
+          Homeworld:<span>{character.homeworld ? ` ${character.homeworld}` : " Unknown"}</span>
+        </p>
+        <p className="character-card-info">
+          Species:
+          <span>{character.species ? ` ${character.species}` : " Unknown"}</span>
+        </p>
       </div>
     </Link>
   </motion.li>

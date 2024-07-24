@@ -5,7 +5,7 @@ const SortSelect = ({ onSort }) => {
   return (
     <select onChange={handleChange} className="sort-select">
       <option value="name">Name</option>
-      <option value="height">Height</option>
+      <option value="species">Species</option>
       <option value="homeworld">Homeworld</option>
     </select>
   )

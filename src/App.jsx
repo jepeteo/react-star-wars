@@ -6,7 +6,30 @@ import ErrorBoundary from "./components/ErrorBoundary.jsx"
 import { Suspense, lazy } from "react"
 
 const Home = () => {
-  return <h2>Welcome to Star Wars Info</h2>
+  return (
+    <div className="container">
+      <h1 className="mt-16">Welcome to Star Wars - Information</h1>
+      <div className="pr-info mt-8 max-w-xl m-auto border rounded-lg p-8 border-blue-900 text-center">
+        <p>A small react project about Star Wars.</p>
+        <p>
+          Now it can show a list of characters in a grid layout with basic information about each
+          character, with the ability to click the character card and see more information about the
+          character.
+        </p>
+        <p>
+          i have used the Star Wars API from: <br />
+          <a
+            className=" text-blue-400 hover:text-red-800"
+            href="https://akabab.github.io/starwars-api/"
+            target="_blank"
+            title="Star Wars API"
+          >
+            https://akabab.github.io/starwars-api/
+          </a>
+        </p>
+      </div>
+    </div>
+  )
 }
 
 const CharacterList = lazy(() => import("./routes/CharacterList.jsx"))

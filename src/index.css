@@ -49,6 +49,11 @@ body.light-mode {
 
 @layer components {
 
+  /* Home */
+  .pr-info p {
+    @apply mb-8;
+  }
+
   /* Navigation */
   .main-nav {
     @apply flex justify-between px-4 md:px-8;

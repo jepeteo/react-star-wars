@@ -9,7 +9,7 @@ Star Wars Character Explorer is a React-based web application that allows users 
 - **Character List**: Browse through a paginated list of Star Wars characters.
 - **Character Details**: View detailed information about each character.
 - **Search**: Filter characters by name in real-time.
-- **Sorting**: Sort characters by various criteria (e.g., name, height, mass).
+- **Sorting**: Sort characters by various criteria (e.g., name, species, homeworld).
 - **Pagination**: Navigate through the character list with ease.
 - **Responsive Design**: Optimized for both desktop and mobile devices.
 - **Loading Skeletons**: Improved user experience while data is being fetched.
@@ -31,16 +31,22 @@ Star Wars Character Explorer is a React-based web application that allows users 
 
 1. Clone the repository:
 
+```
 https://github.com/jepeteo/react-star-wars
+```
 
 2. Install dependencies:
 
+```
 cd react-star-wars
 npm install
+```
 
 3. Start the development server:
 
+```
 npm start
+```
 
 4. Open your browser and visit `http://localhost:5173`
 
